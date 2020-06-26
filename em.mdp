@@ -1,6 +1,6 @@
 ; minim.mdp - used as input into grompp to generate em.tpr
 ; Parameters describing what to do, when to stop and what to save
-integrator  = stepp         ;cg   ;steep         ; Algorithm (steep = steepest descent minimization)
+integrator  = steep         ;cg   ;steep         ; Algorithm (steep = steepest descent minimization)
 emtol       = 1000.0        ; Stop minimization when the maximum force < 1000.0 kJ/mol/nm
 emstep      = 0.01          ; Minimization step size
 nsteps      = 500000        ; Maximum number of (minimization) steps to perform

@@ -50,7 +50,7 @@ mv $oldndxfile $ndxdir
         acceleration=0;
         presseure=ENVIRON["pre"];
         presseure=presseure+0;
-        thick=1;   ###############################################
+        thick=1;   
        }
         
         {
