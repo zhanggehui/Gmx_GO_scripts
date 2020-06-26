@@ -1,6 +1,6 @@
 #!/bin/bash
 #####  changable   ###################################################
-NodeType=cn_nl # cn-short ; cn_nl ; gpu_4l ; debug ; debug_gpu
+NodeType=cn-short # cn-short ; cn_nl ; gpu_4l ; debug ; debug_gpu
 NodeNum=1   # only affect cn-short
 NtasksPerNode=20   # only affect cn-short
 export Usempirun=1  # affect all
