@@ -3,7 +3,7 @@
 NodeType=cn-short # cn-short ; cn_nl ; gpu_4l ; debug ; debug_gpu
 NodeNum=1   # only affect cn-short
 NtasksPerNode=20   # only affect cn-short
-export Usempirun=1  # except gpu ; cn-short: 0 or 1 ; cn_nl: 1
+export Usempirun=0  # except gpu ; cn-short: 0 or 1 ; cn_nl: 1
 export RunScript=$1
 export RunDir=$2
 export Orientation=2  #ori x1,y2,z3
