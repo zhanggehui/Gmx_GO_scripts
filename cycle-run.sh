@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # run in root dir
-ttotal=5000000   #fs
-tstep=5000000    #fs
-pressure=1000    #Mpa
+ttotal=5000000       #fs
+tstep=5000000        #fs
+pressure=0           #Mpa
 nvtequdir=nvtequ
 
 ############################################################
