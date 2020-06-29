@@ -8,7 +8,7 @@ do
 #echo '4' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o CL${i}00Mpa-0V.gro -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
 
 cd ./${i}00Mpa-0V
-echo '4' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o CA${i}00Mpa-0V.gro -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
+echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o CA${i}00Mpa-0V.gro -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
 cd ..
 done
 
