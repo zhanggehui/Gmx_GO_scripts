@@ -1,5 +1,5 @@
 
-for ((i=2,i<11,i++))
+for ((i=2;i<11;i++))
 do
 indexstr=$((0.1*$i))
 cd ./0Mpa-${indexstr}V
