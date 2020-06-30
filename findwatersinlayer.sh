@@ -83,7 +83,7 @@ then
 str2="accelerate               = $acceleration 0 0"
 elif [ $ori -eq 2 ]
 then
-str2="accelerate               = 0 -$acceleration 0"
+str2="accelerate               = 0 $acceleration 0"
 else
 str2="accelerate               = 0 0 $acceleration"
 fi
