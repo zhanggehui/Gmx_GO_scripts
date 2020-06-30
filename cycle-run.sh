@@ -26,7 +26,7 @@ mkdir $ndxdir
 mv ./$nvtequdir/nvt-equ.gro ./$nvtequdir/nvt-step-0.gro
 mv ./$nvtequdir/nvt-equ.cpt ./$nvtequdir/nvt-step-0.cpt
 
-mdpfile=./scripts/nvt-cycle.mdp
+mdpfile=./$rundir/nvt-cycle.mdp
 
 #posregro=./$nvtequdir/nvt-step-0.gro
 

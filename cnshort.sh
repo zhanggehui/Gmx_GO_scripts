@@ -47,7 +47,7 @@ else
 #   gmxrun="$mpistring mdrun_mpi2"
 fi
 
-source ./$scriptsdir/$runscript
+source ./$rundir/$runscript
 
 ###########################################################
 echo 'End at:' >> ./$rundir/time.out
