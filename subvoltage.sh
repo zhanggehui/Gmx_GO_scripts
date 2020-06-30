@@ -1,5 +1,5 @@
 
-for ((i=1;i<7;i++))
+for ((i=2;i<7;i++))
 do
 word="E-y                      ="
 new="E-y                      =  1  1.${i}  0"
