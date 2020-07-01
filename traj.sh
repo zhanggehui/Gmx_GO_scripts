@@ -1,4 +1,7 @@
 
+for((k=0;k<2;k++))
+do
+
 for ((i=1;i<10;i++))
 do
 #cd ./0Mpa-0.${i}V
@@ -7,14 +10,15 @@ do
 #cd ./${i}00Mpa-0V
 #echo '4' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o CL${i}00Mpa-0V.gro -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
 
-cd ./re${i}00Mpa-0V
-echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o NAre${i}00Mpa-0V.gro -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
+#cd ./re${i}00Mpa-0V
+#echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o NA${i}00Mpa-0V.gro -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
 
-#cd ./0Mpa-1.${i}V
-#echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o NA0Mpa-1.${i}V.gro -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
+cd ./0Mpa-${k}.${i}V
+echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o NA0Mpa-${k}.${i}V.gro -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
 
 cd ..
 done
 
+done
 
 
