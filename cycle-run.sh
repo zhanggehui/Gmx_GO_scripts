@@ -3,7 +3,7 @@
 # run in root dir
 ttotal=5000000       #fs
 tstep=5000000        #fs
-pressure=2000         #Mpa
+pressure=1100         #Mpa
 nvtequdir=nvtequ
 
 ############################################################
