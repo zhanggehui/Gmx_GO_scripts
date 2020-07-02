@@ -325,7 +325,7 @@ E-x                      =
 ; peak, and sigma (width) for pulse. Sigma = 0 removes pulse, leaving
 ; the field to be a cosine function.
 E-xt                     = 
-E-y                      = 1  0.7  0
+E-y                      = 1  0.77  0
 E-yt                     = 
 E-z                      = 
 E-zt                     = 
