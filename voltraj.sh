@@ -1,6 +1,6 @@
 
 
-ionname=LI
+ionname=CS
 
 for((k=0;k<1;k++))
 do
