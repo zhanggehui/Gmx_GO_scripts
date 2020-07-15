@@ -1,3 +1,4 @@
+source /home/liufeng_pkuhpc/gmx-zs.sh
 
 ionname=CS
 

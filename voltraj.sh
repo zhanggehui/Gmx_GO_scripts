@@ -1,8 +1,8 @@
-
+source /home/liufeng_pkuhpc/gmx-zs.sh
 
 ionname=CS
 
-for((k=0;k<1;k++))
+for((k=0;k<2;k++))
 do
     for ((i=1;i<10;i++))
     do
