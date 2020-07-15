@@ -5,4 +5,4 @@ mv GO2-${ion}.top GO2.top
 gmx make_ndx -f GO2-ion.gro -o waterlayer.ndx  < ./scripts/ndxcommands.sh
 
 #em
-./scripts/auto-run.sh em.sh em
+source ./scripts/auto-run.sh em.sh em
