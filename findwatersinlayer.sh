@@ -47,6 +47,7 @@ mv $oldndxfile $ndxdir
         araalen2=araalen2+0;
         area=araalen1*araalen2;
         coord=0; count=0;
+        vcoord=0; vcount=0;
         acceleration=0;
         presseure=ENVIRON["pre"];
         presseure=presseure+0;
@@ -54,16 +55,20 @@ mv $oldndxfile $ndxdir
        }
         
         {
-          coord=substr($0,p1,8);
-          coord=coord+0;
+          coord=substr($0,p1,8); coord=coord+0;
           if( match($0, /OW/) && ( coord<thick || coord>(len-thick) ) )
           {
-          count++;
-          serial=substr($0,16,5);
-          if(count%15!=0)
-              {printf("%5s ", serial) ;}
-          else
-              {printf("%5s\n", serial) ;}
+            count++;
+            serial=substr($0,16,5);
+            vcoord=substr($0,37,44); vcoord=vcoord+0;
+            if ( vcoord>=0.75 && vcoord<=3.75)
+            {
+              vcount=vcount+1;
+              if(vcount%15!=0)
+                {printf("%5s ", serial) ;}
+              else
+                {printf("%5s\n", serial) ;}
+            }
           }
         }
         
