@@ -7,7 +7,7 @@
 #SBATCH --no-requeue
 #SBATCH -A liufeng_g1
 #SBATCH --qos=liufengcnnl
-#SBATCH --ntasks-per-node=4
+#SBATCH --ntasks-per-node=28
 #SBATCH --exclusive
 
 # environment variable:
