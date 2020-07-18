@@ -61,7 +61,7 @@ mv $oldndxfile $ndxdir
             count++;
             serial=substr($0,16,5);
             vcoord=substr($0,37,44); vcoord=vcoord+0;
-            if ( vcoord>=0.75 && vcoord<=3.75)
+            if ( vcoord>=-100 && vcoord<=100)
             {
               vcount=vcount+1;
               if(vcount%15!=0)
