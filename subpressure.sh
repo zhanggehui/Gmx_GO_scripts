@@ -1,4 +1,3 @@
-
 for ((i=1;i<20;i++))
 do
     word="pressure=" ; new="pressure=${i}00     #MPa"

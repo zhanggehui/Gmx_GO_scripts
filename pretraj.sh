@@ -1,5 +1,4 @@
 ionname=CS
-
 for ((i=1;i<20;i++))
 do
     cd ./${i}00Mpa-0V
