@@ -1,3 +1,4 @@
+##
 ion=CS
 mv GO2-${ion}.gro GO2-ion.gro
 mv GO2-${ion}.top GO2.top
