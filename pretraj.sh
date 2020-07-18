@@ -1,5 +1,3 @@
-source /home/liufeng_pkuhpc/gmx-zs.sh
-
 ionname=CS
 
 for ((i=1;i<20;i++))
