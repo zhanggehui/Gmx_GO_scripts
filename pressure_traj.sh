@@ -1,4 +1,4 @@
-ionname=CS
+ionname=LI
 mkdir ../${ionname}_traj
 for ((i=1;i<20;i++))
 do
