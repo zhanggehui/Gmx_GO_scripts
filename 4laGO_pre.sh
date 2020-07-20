@@ -1,4 +1,4 @@
-ions=("CS";"LI";"NA";"K";"CA";"MG")
+ions=("CS" "LI" "NA" "K" "CA" "MG")
 ion=${ions[1]}
 if [ ! -d "./$ion" ];then
     mkdir ./$ion
