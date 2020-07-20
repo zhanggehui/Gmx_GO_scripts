@@ -1,3 +1,8 @@
+#shut off electric-field-y
+word="electric-field-y"
+new=";electric-field-y         = 0 0 0 0"
+sed -i "/$word/c$new" ./scripts/nvt-cycle.mdp
+
 #0V-0Mpa
 word="pressure=" ; new="pressure=0     #Mpa"
 sed -i "/$word/c$new" ./scripts/cycle-run.sh

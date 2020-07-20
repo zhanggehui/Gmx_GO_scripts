@@ -1,3 +1,7 @@
+#shut off pressure
+word="pressure=" ; new="pressure=0     #Mpa"
+sed -i "/$word/c$new" ./scripts/cycle-run.sh
+
 #0.x V
 for ((i=1;i<10;i++))
 do
