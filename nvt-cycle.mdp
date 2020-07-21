@@ -335,7 +335,7 @@ sim-temp-high            = 300
 ; and sigma (ps) width of the pulse. Omega = 0 means static field,
 ; sigma = 0 means no pulse, leaving the field to be a cosine function.
 ;electric-field-x         = 0 0 0 0
-electric-field-y         = 1.6 0 0 0
+electric-field-y         = 1.4 0 0 0
 ;electric-field-z         = 0 0 0 0
 
 ; Ion/water position swapping for computational electrophysiology setups

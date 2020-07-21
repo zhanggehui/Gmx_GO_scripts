@@ -44,7 +44,7 @@ else
     #mpistring="mpirun -n $SLURM_NTASKS -quiet --mca pml ob1 --mca btl_openib_allow_ib true"
     mpistring="mpirun -n $SLURM_NTASKS"
     gmxrun="$mpistring mdrun_mpi"
-#   gmxrun="$mpistring mdrun_mpi2"
+    #gmxrun="$mpistring mdrun_mpi2"
 fi
 
 source ./$rundir/$runscript
