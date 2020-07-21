@@ -5,10 +5,11 @@ if [ ! -d ${ionname}_traj ]
 then
 mkdir ../${ionname}_traj
 fi
+
 cd ./0Mpa-0V
-echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o ${ionname}0Mpa-0V \
+echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o ${ionname}0Mpa-0V.gro \
 -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
-cp -rf  ${ionname}0Mpa-0V ../../${ionname}_traj
+cp -rf  ${ionname}0Mpa-0V.gro ../../${ionname}_traj
 #rm  -rf \#*
 cd ..
 

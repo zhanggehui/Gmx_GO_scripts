@@ -5,7 +5,6 @@ ttotal=5000000       #fs
 tstep=5000000        #fs
 pressure=0        #Mpa
 nvtequdir=nvtequ
-
 ############################################################
 #first initialization
 #source command executed in current shell so pay attentation to environment variable
@@ -15,7 +14,7 @@ echo 'stepnum   count   acceleration' >> ./$rundir/waternumber
 numofcycle=$(($ttotal/$tstep))
 
 #run cycle
-chmod +x ./scripts/findwatersinlayer.sh
+chmod +x ./$scriptsdir/findwatersinlayer.sh
 rm -rf ${rundir}recordcycle
 cp waterlayer.ndx $rundir
 mdpdir=./$rundir/${rundir}mdps
@@ -48,7 +47,7 @@ tinit=$((i-1))
 resettinit="tinit                    = $tinit"
 sed -i "/tinit/c$resettinit" $mdpfile
 
-./scripts/findwatersinlayer.sh $lastgro ./$rundir/waterlayer.ndx $i $ndxdir $orientation $pressure $mdpfile
+./$scriptsdir/findwatersinlayer.sh $lastgro ./$rundir/waterlayer.ndx $i $ndxdir $orientation $pressure $mdpfile
 
 gmx grompp -f $mdpfile -c $lastgro -t $lastcpt \
 -p GO2.top -o ./$rundir/$tprname -po $mdpdir/step$i -n ./$rundir/waterlayer.ndx

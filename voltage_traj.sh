@@ -13,7 +13,7 @@ do
     trajname=${ionname}0Mpa-${k}.${i}V.gro
     echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o $trajname \
     -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
-    rm  -rf \#*
+    #rm  -rf \#*
     cp -rf  $trajname ../../${ionname}_traj
     cd ..
 done
@@ -25,7 +25,7 @@ do
     trajname=${ionname}0Mpa-${k}.${i}V.gro
     echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o $trajname \
     -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
-    rm  -rf \#*
+    #rm  -rf \#*
     cp -rf  $trajname ../../${ionname}_traj
     cd ..
 done
@@ -33,6 +33,6 @@ done
 cd ./0Mpa-1V
 echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o ${ionname}0Mpa-1V.gro \
 -pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
-rm  -rf \#*
+#rm  -rf \#*
 cp -rf  ${ionname}0Mpa-1V.gro ../../${ionname}_traj
 cd ..

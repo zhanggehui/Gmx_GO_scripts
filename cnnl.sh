@@ -37,7 +37,7 @@ echo '' >> ./$rundir/time.out
 #############################################################
 
 if [ $SLURM_JOB_NUM_NODES -eq 1 -a $Usempirun -eq 0 ] ; then
-    source /home/liufeng_pkuhpc/gmx-zs.sh
+    source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
     gmxrun="gmx mdrun -ntmpi $SLURM_NTASKS"
 else
     source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
@@ -47,7 +47,7 @@ else
 #   gmxrun="$mpistring mdrun_mpi2"
 fi
 
-source ./$scriptsdir/$runscript
+source ./$rundir/$runscript
 
 ###########################################################
 echo 'End at:' >> ./$rundir/time.out

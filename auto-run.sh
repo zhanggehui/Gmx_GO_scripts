@@ -1,9 +1,9 @@
 #!/bin/bash
 #####  changable   ###################################################
 NodeType=cn_nl # cn-short ; cn_nl ; gpu_4l ; debug ; debug_gpu
-NodeNum=1   # only affect cn-short
-NtasksPerNode=20   # only affect cn-short
-export Usempirun=1  # except gpu ; cn-short: 0 or 1 ; cn_nl: 1
+NodeNum=1   # affect cn-short and cn_nl
+NtasksPerNode=28   # affect cn-short and cn_nl
+export Usempirun=1  # except gpu ; cn-short: 0 or 1 ; cn_nl: 1(better)
 export RunScript=$1
 export RunDir=$2
 export Orientation=2  #ori x1,y2,z3
@@ -17,7 +17,7 @@ echo '' >> $RunDir/time.out
 ##choose proper node setting ########################################
 if [ "$NodeType" == cn-short ] ; then
 submissionscript='cnshort.sh'
-keyword="#SBATCH -N" ;newline="#SBATCH -N $NodeNum"
+keyword="#SBATCH -N" ; newline="#SBATCH -N $NodeNum"
 sed -i "/$keyword/c$newline" ./$ScriptsDir/$submissionscript
 keyword="#SBATCH --ntasks-per-node"
 newline="#SBATCH --ntasks-per-node=$NtasksPerNode"
@@ -25,6 +25,11 @@ sed -i "/$keyword/c$newline" ./scripts/$submissionscript
 #####################################################################
 elif [ "$NodeType" == cn_nl ] ; then
 submissionscript='cnnl.sh'
+keyword="#SBATCH -N" ; newline="#SBATCH -N $NodeNum"
+sed -i "/$keyword/c$newline" ./$ScriptsDir/$submissionscript
+keyword="#SBATCH --ntasks-per-node"
+newline="#SBATCH --ntasks-per-node=$NtasksPerNode"
+sed -i "/$keyword/c$newline" ./scripts/$submissionscript
 #####################################################################
 elif [ "$NodeType" == debug ] ; then
 submissionscript='debug.sh'
