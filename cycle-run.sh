@@ -22,18 +22,19 @@ ndxdir=./$rundir/${rundir}ndxs
 mkdir $mdpdir
 mkdir $ndxdir
 
+if [ -f ./$nvtequdir/nvt-equ.gro ] ; then
 mv ./$nvtequdir/nvt-equ.gro ./$nvtequdir/nvt-step-0.gro
+fi
+if [ -f ./$nvtequdir/nvt-equ.cpt ] ; then
 mv ./$nvtequdir/nvt-equ.cpt ./$nvtequdir/nvt-step-0.cpt
-
+fi
 mdpfile=./$rundir/nvt-cycle.mdp
 
 #posregro=./$nvtequdir/nvt-step-0.gro
 
 for((i=1;i<=$numofcycle;i++))
 do
-
 tprname=nvt-step-$i.tpr
-
 if [ $i -eq 1 ]
 then
 lastgro=./$nvtequdir/nvt-step-0.gro
@@ -56,9 +57,7 @@ gmx grompp -f $mdpfile -c $lastgro -t $lastcpt \
 cd $rundir
 $gmxrun -v -deffnm ${tprname%.*}
 cd ..
-
 echo $i >> ${rundir}recordcycle
-
 done
 
 cd $rundir
