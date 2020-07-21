@@ -15,3 +15,5 @@ do
     sed -i "/$word/c$new" ./$ScriptsDir/cycle-run.sh
     source ./$ScriptsDir/auto-run.sh cycle-run.sh ${i}00Mpa-0V
 done
+
+#source subvoltage_2019.sh
