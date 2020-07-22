@@ -1,5 +1,4 @@
-
-ionname=LI
+ionname=NA
 
 if [ ! -d ${ionname}_traj ]
 then
