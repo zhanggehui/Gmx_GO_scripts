@@ -1,8 +1,8 @@
 #!/bin/bash
 #####  changable   ###################################################
-NodeType=cn-short # cn-short ; cn_nl ; gpu_4l ; debug ; debug_gpu
+NodeType=cn_nl # cn-short ; cn_nl ; gpu_4l ; debug ; debug_gpu
 NodeNum=1   # affect cn-short and cn_nl
-NtasksPerNode=20   # affect cn-short and cn_nl
+NtasksPerNode=28   # affect cn-short and cn_nl
 export Usempirun=1  # except gpu ; cn-short: 0 or 1 ; cn_nl: 1(better)
 export RunScript=$1
 export RunDir=$2
