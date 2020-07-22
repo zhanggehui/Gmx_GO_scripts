@@ -1,6 +1,6 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 ions=("CS" "LI" "NA" "K" "CA" "MG")
-ion=${ions[2]}
+ion=${ions[0]}
 if [ ! -d "./$ion" ];then
     mkdir ./$ion
     cp -r oplsaaGO.ff ./$ion
