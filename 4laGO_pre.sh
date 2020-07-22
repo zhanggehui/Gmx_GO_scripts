@@ -1,12 +1,11 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 ions=("CS" "LI" "NA" "K" "CA" "MG")
-ion=${ions[4]}
-val=CS2 #for ion 4 or 5
+ion=${ions[4]}  #for ion 4 or 5
 if [ ! -d "./$ion" ];then
     mkdir ./$ion
     cp -r oplsaaGO.ff ./$ion
-    cp ./receive/GO2-${val}.gro ./$ion/GO2-ion.gro
-    cp ./receive/GO2-${val}.top ./$ion/GO2.top
+    cp ./receive/GO2-${ion}.gro ./$ion/GO2-ion.gro
+    cp ./receive/GO2-${ion}.top ./$ion/GO2.top
     cd ./$ion
     #gmx make_ndx -f GO2-ion.gro -o waterlayer.ndx  < ../md_scripts/final4la_ndxcommands.sh
     gmx make_ndx -f GO2-ion.gro -o waterlayer.ndx  < ../md_scripts/2_final4la_ndxcommands.sh
