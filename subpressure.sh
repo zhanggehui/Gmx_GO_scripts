@@ -16,4 +16,4 @@ do
     source ./$ScriptsDir/auto-run.sh cycle-run.sh ${i}00Mpa-0V
 done
 
-source subvoltage_2019.sh
+source ./scripts/subvoltage_2019.sh
