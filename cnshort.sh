@@ -1,12 +1,12 @@
 #!/bin/bash
 #SBATCH -J gmx_nvtequ_0613-20:22
-#SBATCH -p cn-long
+#SBATCH -p cn-short
 #SBATCH -N 1
 #SBATCH -o ./nvtequ/1.out
 #SBATCH -e ./nvtequ/2.err
 #SBATCH --no-requeue
 #SBATCH -A liufeng_g1
-#SBATCH --qos=liufengcnl
+#SBATCH --qos=liufengcns
 #SBATCH --ntasks-per-node=20
 #SBATCH --exclusive
 
