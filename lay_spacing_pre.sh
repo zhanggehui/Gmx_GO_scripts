@@ -1,4 +1,5 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
+
 spacing=1.1
 dir=lay_$spacing
 if [ ! -d "./$dir" ];then
