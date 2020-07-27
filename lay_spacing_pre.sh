@@ -8,7 +8,7 @@ if [ ! -d "./$dir" ];then
     cp ./receive/GO_${spacing}.top ./$dir/GO2.top
     cd ./$dir
     #gmx make_ndx -f GO2-dir.gro -o waterlayer.ndx  < ../md_scripts/final4la_ndxcommands.sh
-    gmx make_ndx -f GO2-dir.gro -o waterlayer.ndx  < ../md_scripts/ndx_${spacing}.sh
+    gmx make_ndx -f GO2-ion.gro -o waterlayer.ndx  < ../md_scripts/ndx_${spacing}.sh
     git clone https://github.com/zhanggehui/Gmx_GO_scripts.git
     mv Gmx_GO_scripts scripts
     cp ../md_scripts/.git/config ./scripts/.git/config2
