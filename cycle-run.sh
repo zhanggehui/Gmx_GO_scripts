@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # run in root dir
-ttotal=30000000       #fs
-tstep=30000000        #fs
+ttotal=5000000       #fs
+tstep=5000000        #fs
 pressure=1500        #Mpa
 nvtequdir=nvtequ
 ############################################################
