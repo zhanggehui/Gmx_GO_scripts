@@ -20,7 +20,7 @@ sed -i "/$word/c$new" ./scripts/nvt-cycle.mdp
 source ./scripts/auto-run.sh cycle-run.sh ${pressure}Mpa-1V
 
 #1.x V
-for ((i=1;i<7;i++))
+for ((i=1;i<3;i++))
 do
 word="electric-field-y"
 new="electric-field-y         = -1.${i} 0 0 0"
