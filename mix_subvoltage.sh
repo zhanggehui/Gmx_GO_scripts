@@ -5,7 +5,7 @@ word="pressure=" ; new="pressure=${pressure}     #Mpa"
 sed -i "/$word/c$new" ./scripts/cycle-run.sh
 
 #0.x V
-for ((i=1;i<10;i++))
+for ((i=7;i<10;i++))
 do
 word="electric-field-y"
 new="electric-field-y         = -0.${i} 0 0 0"
