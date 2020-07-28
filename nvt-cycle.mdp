@@ -12,7 +12,7 @@ integrator               = md
 ; Start time and timestep in ps
 tinit                    = 0
 dt                       = 0.001
-nsteps                   = 5000000
+nsteps                   = 30000000
 ; For exact run continuation or redoing part of a run
 init-step                = 0
 ; Part index is updated automatically on checkpointing (keeps files separate)
@@ -335,7 +335,7 @@ sim-temp-high            = 300
 ; and sigma (ps) width of the pulse. Omega = 0 means static field,
 ; sigma = 0 means no pulse, leaving the field to be a cosine function.
 ;electric-field-x         = 0 0 0 0
-electric-field-y         = -0.45 0 0 0
+electric-field-y         = 1.5 0 0 0
 ;electric-field-z         = 0 0 0 0
 
 ; Ion/water position swapping for computational electrophysiology setups
