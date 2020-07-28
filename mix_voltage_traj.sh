@@ -5,6 +5,20 @@ if [ ! -d $trajdir ] ; then
 mkdir ../$trajdir
 pressure=1500
 
+cd ./${pressure}Mpa-0V
+
+trajname=CS${pressure}Mpa-0V.gro
+echo '3' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o $trajname \
+-pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
+cp -rf $trajname ../../$trajdir
+
+trajname=LI${pressure}Mpa-0V.gro
+echo '4' | gmx trjconv -f nvt-pro-traj.trr -s traj.tpr -o $trajname \
+-pbc nojump -b 0 -e 5000 -skip 5000 -n waterlayer.ndx
+cp -rf $trajname ../../$trajdir
+rm  -rf \#*
+cd ..
+
 k=0
 for ((i=1;i<10;i++))
 do
