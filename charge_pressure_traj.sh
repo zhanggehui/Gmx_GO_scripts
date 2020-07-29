@@ -1,6 +1,6 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 
-charge=20
+charge=32
 trajdir=charge_${charge}_traj
 #rm -rf ../lay${charge}_traj
 if [ ! -d $trajdir ] ; then
