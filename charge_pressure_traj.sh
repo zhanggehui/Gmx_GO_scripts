@@ -1,8 +1,8 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 
-spacing=1.2
-trajdir=lay_${spacing}_traj
-#rm -rf ../lay${spacing}_traj
+charge=20
+trajdir=charge_${charge}_traj
+#rm -rf ../lay${charge}_traj
 if [ ! -d $trajdir ] ; then
 mkdir ../$trajdir
 
@@ -25,7 +25,7 @@ do
     cd ..
 done
 
-source ./scripts/lay_voltage_traj.sh
+source ./scripts/charge_voltage_traj.sh
 
 else
 echo 'already exists!'
