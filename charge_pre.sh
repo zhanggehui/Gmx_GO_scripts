@@ -1,6 +1,6 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 
-charge=20
+charge=32
 dir=charge_$charge
 if [ ! -d "./$dir" ];then
     mkdir ./$dir
