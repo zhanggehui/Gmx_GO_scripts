@@ -1,6 +1,6 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 
-negative=n2
+negative=n5
 dir=negative_$negative
 if [ ! -d "./$dir" ];then
     mkdir ./$dir
