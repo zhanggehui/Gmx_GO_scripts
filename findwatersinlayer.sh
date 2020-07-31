@@ -4,12 +4,12 @@ oldndxfile="./$rundir/$i.ndx" ; mv $ndxfile $oldndxfile
 export boxlengthline=$(sed -n '$p' $lastgro)
 
 awk '
-    BEGIN{pr=1;}
+    BEGIN{ pr=1; }
     {
         if(pr==1) {print $0;}
         if( match($0,/waterlayer/) ){pr=0;}
     }
-   '$oldndxfile > $ndxfile
+   ' $oldndxfile > $ndxfile
 
 mv $oldndxfile $ndxdir
 
@@ -44,7 +44,8 @@ awk '
           print acceleration > dir"""/tmp" ;
           print (ENVIRON["i"], count, acceleration) >> dir"""/waternumber" ;
         }
-    '$lastgro >> $ndxfile
+    ' $lastgro >> $ndxfile
+    
 echo '' >> $ndxfile
 acceleration=$(sed -n '1p' ./$rundir/tmp)
 str1=accelerate
