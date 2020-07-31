@@ -1,5 +1,5 @@
 #!/bin/bash
-oldndxfile="./$rundir/$i.ndx" ; mv $ndxfile $oldndxfile
+oldndxfile="./$rundir/step$i.ndx" ; mv $ndxfile $oldndxfile
 export boxlengthline=$(sed -n '$p' $lastgro)
 
 awk '
@@ -32,17 +32,17 @@ awk '
          if( coord<thick || coord>(len-thick) )
             { count++; serial=substr($0,16,5);
               vcoord=substr($0,pv,8); vcoord=vcoord+0;
-              if ( vcoord>=-100 && vcoord<=100)
-              { vcount++;
-                if(vcount%15!=0) {printf("%5s ", serial) ;}
-                else {printf("%5s\n", serial) ;}
-              }
+              if( vcoord>-100 && vcoord<100)
+                { vcount++;
+                  if(vcount%15!=0) {printf("%5s ", serial) ;}
+                  else {printf("%5s\n", serial) ;}
+                }
             }
          }
      END{ acceleration=0.602*pressure*area/(vcount*18);
           print acceleration > dir"""/tmp" ;
           print (ENVIRON["i"], count, acceleration) >> dir"""/waternumber" ;
-        }
+         }
     ' $lastgro >> $ndxfile
     
 echo '' >> $ndxfile
