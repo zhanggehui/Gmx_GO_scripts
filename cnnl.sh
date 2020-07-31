@@ -12,13 +12,7 @@
 
 # environment variable:
 # orientation ; rundir ; runscript ; scriptsdir
-
 export I_MPI_DEBUG=20
-
-export runscript=$RunScript
-export rundir=$RunDir
-export orientation=$Orientation
-export scriptsdir=$ScriptsDir
 #echo "rundir: $rundir"
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST`
 #1.out######################################################
