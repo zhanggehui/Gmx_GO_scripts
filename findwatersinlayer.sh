@@ -51,7 +51,7 @@ acceleration=$(sed -n '1p' ./$rundir/tmp)
 str1=accelerate
 if [ $orientation -eq 1 ] ; then
 str2="accelerate               = $acceleration 0 0"
-elif [ $ori -eq 2 ] ; then
+elif [ $orientation -eq 2 ] ; then
 str2="accelerate               = 0 $acceleration 0"
 else
 str2="accelerate               = 0 0 $acceleration"
