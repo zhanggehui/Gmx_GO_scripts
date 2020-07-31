@@ -13,15 +13,11 @@
 # environment variable:
 # orientation ; rundir ; runscript ; scriptsdir
 export I_MPI_DEBUG=20
-#echo "rundir: $rundir"
-hosts=`scontrol show hostname $SLURM_JOB_NODELIST`
 #1.out######################################################
-echo 'NodesList:'
-echo $hosts ; echo ''
-echo 'Number of Nodes:'
-echo $SLURM_JOB_NUM_NODES ; echo ''
-echo 'Cpus per Node:'
-echo $SLURM_JOB_CPUS_PER_NODE ; echo ''
+hosts=`scontrol show hostname $SLURM_JOB_NODELIST`
+echo "NodesList: $hosts"
+echo "Number of Nodes: $SLURM_JOB_NUM_NODES"
+echo "Cpus per Node: $SLURM_JOB_CPUS_PER_NODE" ; echo ''
 
 #time.out###################################################
 echo 'Begin at:' >> ./$rundir/time.out
@@ -29,7 +25,6 @@ date "+%Y-%m-%d %H:%M:%S"  >> ./$rundir/time.out
 echo '' >> ./$rundir/time.out
 
 #############################################################
-
 if [ $SLURM_JOB_NUM_NODES -eq 1 -a $Usempirun -eq 0 ] ; then
     source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
     gmxrun="gmx mdrun -ntmpi $SLURM_NTASKS"
@@ -42,7 +37,6 @@ else
 fi
 
 source ./$rundir/$runscript
-
 ###########################################################
 echo 'End at:' >> ./$rundir/time.out
 date "+%Y-%m-%d %H:%M:%S"  >> ./$rundir/time.out
