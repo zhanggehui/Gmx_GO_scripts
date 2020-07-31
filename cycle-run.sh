@@ -4,7 +4,8 @@
 # run in root dir
 ttotal=5000000       #fs shell limit in integer
 tstep=5000000        #fs >1000 at least
-export pressure=1900        #Mpa
+pressure=1900        #Mpa
+export pressure
 nvtequdir=nvtequ
 ############################################################
 #first initialization

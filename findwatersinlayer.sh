@@ -1,5 +1,4 @@
 #!/bin/bash
-
 oldndxfile="./$rundir/$i.ndx" ; mv $ndxfile $oldndxfile
 export boxlengthline=$(sed -n '$p' $lastgro)
 
@@ -25,7 +24,7 @@ awk '
           araalen2=substr(ENVIRON["boxlengthline"],pbox3,10); araalen2=araalen2+0;
           area=araalen1*araalen2;
           coord=0; count=0; vcoord=0; vcount=0; pv=37; acceleration=0;
-          presseure=ENVIRON["pressure"]; presseure=presseure+0;
+          pressure=ENVIRON["pressure"]; pressure=pressure+0;
           thick=100;
          }
     /OW/{
@@ -34,13 +33,13 @@ awk '
             { count++; serial=substr($0,16,5);
               vcoord=substr($0,pv,8); vcoord=vcoord+0;
               if ( vcoord>=-100 && vcoord<=100)
-              { vcount=vcount+1;
+              { vcount++;
                 if(vcount%15!=0) {printf("%5s ", serial) ;}
                 else {printf("%5s\n", serial) ;}
               }
             }
          }
-     END{ acceleration=0.602*presseure*area/(vcount*18);
+     END{ acceleration=0.602*pressure*area/(vcount*18);
           print acceleration > dir"""/tmp" ;
           print (ENVIRON["i"], count, acceleration) >> dir"""/waternumber" ;
         }
