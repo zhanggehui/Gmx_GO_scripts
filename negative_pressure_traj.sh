@@ -1,6 +1,6 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 
-negative=n2
+negative=n5
 trajdir=negative_${negative}_traj
 #rm -rf ../lay${negative}_traj
 if [ ! -d $trajdir ] ; then
