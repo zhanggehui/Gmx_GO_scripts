@@ -53,13 +53,14 @@ cd $rundir ; $gmxrun -v -deffnm ${tprname%.*} ; cd ..
 echo $i >> ${rundir}recordcycle
 done
 
+mv ${rundir}recordcycle ./$rundir/recordcycle
+rm -rf ./$rundir/tmp
+
 if [ $i -gt 1 ] ; then
 cd $rundir
 gmx trjcat -f *.trr -o nvt-pro-traj.trr
 cd ..
 #####after run#############################
-rm -rf ./$rundir/tmp
-mv ${rundir}recordcycle ./$rundir/recordcycle
 mv ./$rundir/nvt-step-$numofcycle.gro ./$rundir/last.gro
 mv ./$rundir/nvt-step-1.tpr ./$rundir/traj.tpr
 rm -rf ./$rundir/*.edr
