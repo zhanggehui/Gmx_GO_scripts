@@ -56,18 +56,20 @@ done
 
 mv ${rundir}recordcycle ./$rundir/recordcycle
 rm -rf ./$rundir/tmp
+mv ./$rundir/nvt-step-$numofcycle.gro ./$rundir/last.gro
+mv ./$rundir/nvt-step-1.tpr ./$rundir/traj.tpr
 
 if [ $i -gt 1 ] ; then
 cd $rundir
 gmx trjcat -f *.trr -o nvt-pro-traj.trr
 cd ..
 #####after run#############################
-mv ./$rundir/nvt-step-$numofcycle.gro ./$rundir/last.gro
-mv ./$rundir/nvt-step-1.tpr ./$rundir/traj.tpr
 rm -rf ./$rundir/*.edr
 rm -rf ./$rundir/*.log
 rm -rf ./$rundir/*.cpt
 rm -rf ./$rundir/nvt-step-*.trr
 rm -rf ./$rundir/nvt-step-*.gro
 rm -rf ./$rundir/nvt-step-*.tpr
+else
+mv ./$rundir/nvt-step-1.trr ./$rundir/nvt-pro-traj.trr
 fi
