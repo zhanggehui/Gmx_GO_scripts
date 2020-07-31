@@ -14,7 +14,7 @@ echo 'stepnum   count   acceleration' >> ./$rundir/waternumber
 numofcycle=$(($ttotal/$tstep))
 
 #run cycle
-chmod +x ./$scriptsdir/findwatersinlayer.sh
+#chmod +x ./$scriptsdir/findwatersinlayer.sh
 rm -rf ${rundir}recordcycle
 cp waterlayer.ndx $rundir
 mdpdir=./$rundir/${rundir}mdps

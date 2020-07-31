@@ -25,7 +25,7 @@ awk '
           araalen2=substr(ENVIRON["boxlengthline"],pbox3,10); araalen2=araalen2+0;
           area=araalen1*araalen2;
           coord=0; count=0; vcoord=0; vcount=0; pv=37; acceleration=0;
-          presseure=ENVIRON["presseure"]; presseure=presseure+0;
+          presseure=ENVIRON["pressure"]; presseure=presseure+0;
           thick=100;
          }
     /OW/{
