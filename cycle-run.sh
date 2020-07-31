@@ -16,7 +16,6 @@ numofcycle=$(($ttotal/$tstep))
 
 #run cycle
 #chmod +x ./$scriptsdir/findwatersinlayer.sh
-rm -rf ${rundir}recordcycle
 cp waterlayer.ndx $rundir
 mdpdir=./$rundir/${rundir}mdps
 ndxdir=./$rundir/${rundir}ndxs
@@ -34,6 +33,7 @@ ndxfile=./$rundir/waterlayer.ndx
 #posregro=./$nvtequdir/nvt-step-0.gro
 
 for((i=1;i<=$numofcycle;i++)) ; do
+echo $i >> ./$rundir/recordcycle
 tprname=nvt-step-$i.tpr ; export i
 if [ $i -eq 1 ] ; then
 lastgro=./$nvtequdir/nvt-step-$((i-1)).gro ; lastcpt=./$nvtequdir/nvt-step-$((i-1)).cpt
@@ -51,10 +51,8 @@ gmx grompp -f $mdpfile -c $lastgro -t $lastcpt -p $topfile -o ./$rundir/$tprname
 # -r $posregro   -maxwarn 1
 
 cd $rundir ; $gmxrun -v -deffnm ${tprname%.*} ; cd ..
-echo $i >> ${rundir}recordcycle
 done
 
-mv ${rundir}recordcycle ./$rundir/recordcycle
 rm -rf ./$rundir/tmp
 mv ./$rundir/nvt-step-$numofcycle.gro ./$rundir/last.gro
 mv ./$rundir/nvt-step-1.tpr ./$rundir/traj.tpr
