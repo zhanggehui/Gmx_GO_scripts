@@ -9,7 +9,8 @@ export RunDir=$2
 export Orientation=2  #ori x1,y2,z3
 export ScriptsDir='scripts'
 #####################################################################
-rm -rf $RunDir
+#rm -rf $RunDir
+if [ ! -d $RunDir ] ; then
 mkdir $RunDir
 echo "Partition: $NodeType" > $RunDir/time.out
 echo "Number of Nodes: $NodeNum" >> $RunDir/time.out
@@ -19,16 +20,14 @@ if [ "$NodeType" == cn-short ] ; then
 submissionscript='cnshort.sh'
 keyword="#SBATCH -N" ; newline="#SBATCH -N $NodeNum"
 sed -i "/$keyword/c$newline" ./$ScriptsDir/$submissionscript
-keyword="#SBATCH --ntasks-per-node"
-newline="#SBATCH --ntasks-per-node=$NtasksPerNode"
+keyword="#SBATCH --ntasks-per-node" ; newline="#SBATCH --ntasks-per-node=$NtasksPerNode"
 sed -i "/$keyword/c$newline" ./scripts/$submissionscript
 #####################################################################
 elif [ "$NodeType" == cn_nl ] ; then
 submissionscript='cnnl.sh'
 keyword="#SBATCH -N" ; newline="#SBATCH -N $NodeNum"
 sed -i "/$keyword/c$newline" ./$ScriptsDir/$submissionscript
-keyword="#SBATCH --ntasks-per-node"
-newline="#SBATCH --ntasks-per-node=$NtasksPerNode"
+keyword="#SBATCH --ntasks-per-node" ; newline="#SBATCH --ntasks-per-node=$NtasksPerNode"
 sed -i "/$keyword/c$newline" ./scripts/$submissionscript
 #####################################################################
 elif [ "$NodeType" == debug ] ; then
@@ -58,3 +57,6 @@ cp ./$ScriptsDir/$submissionscript ./$RunDir
 
 sbatch ./$ScriptsDir/$submissionscript
 
+else
+echo 'Already exists! Please make sure!'
+fi

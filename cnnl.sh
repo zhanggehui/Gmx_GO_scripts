@@ -19,7 +19,7 @@ export runscript=$RunScript
 export rundir=$RunDir
 export orientation=$Orientation
 export scriptsdir=$ScriptsDir
-
+echo "rundir: $rundir"
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST`
 #1.out######################################################
 echo 'NodesList:'
