@@ -51,7 +51,7 @@ ename="./$rundir/2.err"
 keyword="#SBATCH -e" ; newline="#SBATCH -e $ename"
 sed -i "/$keyword/c$newline" ./$scriptsdir/$submissionscript
 
-cp ./$scriptsdir/$runrcript ./$rundir
+cp ./$scriptsdir/$runscript ./$rundir
 cp ./$scriptsdir/nvt-cycle.mdp ./$rundir
 cp ./$scriptsdir/$submissionscript ./$rundir
 
