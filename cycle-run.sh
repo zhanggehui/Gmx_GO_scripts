@@ -52,7 +52,7 @@ done
 rm -rf ./$rundir/tmp
 mv ./$rundir/nvt-step-$numofcycle.gro ./$rundir/last.gro
 mv ./$rundir/nvt-step-1.tpr ./$rundir/traj.tpr
-if [ $i -gt 1 ] ; then
+if [ $i -gt 2 ] ; then   #for  i++
 cd $rundir ; gmx trjcat -f *.trr -o nvt-pro-traj.trr ; cd ..
 rm -rf ./$rundir/*.edr
 rm -rf ./$rundir/*.log
