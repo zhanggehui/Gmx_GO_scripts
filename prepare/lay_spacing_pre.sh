@@ -1,6 +1,6 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 
-spacing=1.2
+spacing=1.3
 dir=lay_$spacing
 if [ ! -d "./$dir" ];then
     mkdir ./$dir
@@ -8,7 +8,7 @@ if [ ! -d "./$dir" ];then
     cp ./receive/GO_${spacing}.gro ./$dir/GO2-ion.gro
     cp ./receive/GO_${spacing}.top ./$dir/GO2.top
     cd ./$dir
-    gmx make_ndx -f GO2-ion.gro -o waterlayer.ndx  < ../md_scripts/ndx_${spacing}.sh
+    gmx make_ndx -f GO2-ion.gro -o waterlayer.ndx  < ../md_scripts/ndxs/ndx_${spacing}.sh
     git clone https://github.com/zhanggehui/Gmx_GO_scripts.git
     mv Gmx_GO_scripts scripts
     cp ../md_scripts/.git/config ./scripts/.git/config2
