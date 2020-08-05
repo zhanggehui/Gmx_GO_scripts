@@ -11,7 +11,8 @@ cd ./$ion/nvtequ
 grofile=nvt-step-0.gro ; xvgfile=${ion}_rdf.xvg
 gmx make_ndx -f $grofile < ../../md_scripts/rdf_ndx.sh
 gmx rdf -f $grofile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile
-mv $xvgfile ../../$rdfdir
+cp $xvgfile ../../$rdfdir
+rm -rf \#
 cd ../../
 done
 
