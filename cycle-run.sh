@@ -4,7 +4,7 @@
 # run in root dir
 ttotal=5000000       #fs shell math limit in integer
 tstep=5000000        #fs >1000 at least
-pressure=1900        #Mpa
+pressure=0        #Mpa
 export pressure
 nvtequdir=nvtequ
 ############################################################
