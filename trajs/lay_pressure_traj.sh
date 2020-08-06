@@ -25,7 +25,7 @@ do
     cd ..
 done
 
-source ./scripts/lay_voltage_traj.sh
+source ./scripts/trajs/lay_voltage_traj.sh
 
 else
 echo 'already exists!'
