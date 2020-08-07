@@ -45,8 +45,8 @@ cd ../
 
 j=0
 for ((k=1;k<10;k++)) ; do
-cd 0Mpa-$j.$kV ; grofile=last.gro
-xvgfile=${ion}_$j.$kV.xvg
+cd 0Mpa-$j.${k}V ; grofile=last.gro
+xvgfile=${ion}_$j.${k}V.xvg
 gmx make_ndx -f $grofile < ../../md_scripts/rdf_ndx.sh
 gmx rdf -f $grofile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile
 #-bin 0.01
@@ -57,8 +57,8 @@ done
 
 j=1
 for ((k=1;k<7;k++)) ; do
-cd 0Mpa-$j.$kV ; grofile=last.gro
-xvgfile=${ion}_$j.$kV.xvg
+cd 0Mpa-$j.${k}V ; grofile=last.gro
+xvgfile=${ion}_$j.${k}V.xvg
 gmx make_ndx -f $grofile < ../../md_scripts/rdf_ndx.sh
 gmx rdf -f $grofile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile
 #-bin 0.01
