@@ -10,8 +10,8 @@ ion=${ions[$i]}
 cd ./$ion/0Mpa-0V ; ffile=nvt-pro-traj.trr
 xvgfile=${ion}_rdf.xvg
 gmx make_ndx -f $ffile < ../../md_scripts/rdf_ndx.sh
-gmx rdf -f $ffile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile -b 0 -e 5000 -rmax 1
-#-bin 0.01
+gmx rdf -f $ffile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile -b 0 -e 5000
+#-bin 0.01 -rmax 1
 cp $xvgfile ../../$rdfdir
 rm -rf \#*
 cd ../../

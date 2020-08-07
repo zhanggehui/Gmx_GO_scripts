@@ -12,21 +12,21 @@ mkdir $rdfdir/$ion
 cd ./$ion
 
 #0Mpa-0V
-cd 0Mpa-0V ; grofile=last.gro
+cd 0Mpa-0V ; ffile=last.gro
 xvgfile=${ion}_0Mpa.xvg
-gmx make_ndx -f $grofile < ../../md_scripts/rdf_ndx.sh
-gmx rdf -f $grofile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile
-#-bin 0.01
+gmx make_ndx -f $ffile < ../../md_scripts/rdf_ndx.sh
+gmx rdf -f $ffile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile -b 0 -e 5000
+#-bin 0.01 -rmax 1
 cp $xvgfile ../../$rdfdir/$ion
 rm -rf \#*
 cd ../
 
 #Mpa
 for ((k=1;k<20;k++)) ; do
-cd ${k}00Mpa-0V ; grofile=last.gro
+cd ${k}00Mpa-0V ; ffile=last.gro
 xvgfile=${ion}_${k}00Mpa.xvg
-gmx make_ndx -f $grofile < ../../md_scripts/rdf_ndx.sh
-gmx rdf -f $grofile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile
+gmx make_ndx -f $ffile < ../../md_scripts/rdf_ndx.sh
+gmx rdf -f $ffile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile -b 0 -e 5000
 #-bin 0.01
 cp $xvgfile ../../$rdfdir/$ion
 rm -rf \#*
@@ -34,19 +34,19 @@ cd ../
 done
 
 #V
-cd 0Mpa-0V ; grofile=last.gro
+cd 0Mpa-0V ; ffile=last.gro
 xvgfile=${ion}_0V.xvg
-gmx make_ndx -f $grofile < ../../md_scripts/rdf_ndx.sh
-gmx rdf -f $grofile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile
+gmx make_ndx -f $ffile < ../../md_scripts/rdf_ndx.sh
+gmx rdf -f $ffile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile -b 0 -e 5000
 #-bin 0.01
 cp $xvgfile ../../$rdfdir/$ion
 rm -rf \#*
 cd ../
 
-cd 0Mpa-1V ; grofile=last.gro
+cd 0Mpa-1V ; ffile=last.gro
 xvgfile=${ion}_1V.xvg
-gmx make_ndx -f $grofile < ../../md_scripts/rdf_ndx.sh
-gmx rdf -f $grofile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile
+gmx make_ndx -f $ffile < ../../md_scripts/rdf_ndx.sh
+gmx rdf -f $ffile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile -b 0 -e 5000
 #-bin 0.01
 cp $xvgfile ../../$rdfdir/$ion
 rm -rf \#*
@@ -54,10 +54,10 @@ cd ../
 
 j=0
 for ((k=1;k<10;k++)) ; do
-cd 0Mpa-$j.${k}V ; grofile=last.gro
+cd 0Mpa-$j.${k}V ; ffile=last.gro
 xvgfile=${ion}_$j.${k}V.xvg
-gmx make_ndx -f $grofile < ../../md_scripts/rdf_ndx.sh
-gmx rdf -f $grofile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile
+gmx make_ndx -f $ffile < ../../md_scripts/rdf_ndx.sh
+gmx rdf -f $ffile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile -b 0 -e 5000
 #-bin 0.01
 cp $xvgfile ../../$rdfdir/$ion
 rm -rf \#*
@@ -66,10 +66,10 @@ done
 
 j=1
 for ((k=1;k<7;k++)) ; do
-cd 0Mpa-$j.${k}V ; grofile=last.gro
+cd 0Mpa-$j.${k}V ; ffile=last.gro
 xvgfile=${ion}_$j.${k}V.xvg
-gmx make_ndx -f $grofile < ../../md_scripts/rdf_ndx.sh
-gmx rdf -f $grofile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile
+gmx make_ndx -f $ffile < ../../md_scripts/rdf_ndx.sh
+gmx rdf -f $ffile -n index.ndx -ref $ion -sel OW -selrpos atom -seltype atom -o $xvgfile -b 0 -e 5000
 #-bin 0.01
 cp $xvgfile ../../$rdfdir/$ion
 rm -rf \#*
