@@ -10,7 +10,7 @@
 
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST` ; echo $hosts
 
-analyse-scripts=rdf_pv.sh
+analyse_scripts=rdf_pv.sh
 
-source ./md_scriptts/$analyse-scripts
+source ./md_scriptts/${analyse_scripts}
 
