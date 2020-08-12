@@ -1,6 +1,6 @@
 source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 
-spacing=2
+spacing=2.5
 dir=lay_$spacing
 if [ ! -d "./$dir" ];then
     mkdir ./$dir
