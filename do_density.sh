@@ -10,7 +10,7 @@ ion=${ions[$i]}
 cd ./$ion/0Mpa-0V ; ffile=nvt-pro-traj.trr
 xvgfile=${ion}_density.xvg
 echo q | gmx make_ndx -f last.gro
-echo 3 | gmx density -f $ffile -n index.ndx -d Y -o $xvgfile -b 0 -e 5000
+echo 3 | gmx density -f $ffile -n index.ndx -s traj.tpr -d Y -o $xvgfile -b 0 -e 5000
 #-sl 50
 cp $xvgfile ../../$densitydir
 rm -rf \#*
