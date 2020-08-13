@@ -10,7 +10,7 @@
 
 hosts=`scontrol show hostname $SLURM_JOB_NODELIST` ; echo $hosts
 
-analyse_scripts=do_rdf.sh
+analyse_scripts=do_density.sh
 
 source ./md_scripts/${analyse_scripts}
 
