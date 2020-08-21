@@ -3,7 +3,7 @@ source /appsnew/mdapps/gromacs2019.2_intelmkl2019u4/bin/GMXRC2.bash
 spacing=2 ; ion=CS
 dir=${ion}_lay/lay_$spacing
 if [ ! -d "./$dir" ];then
-    mkdir ./$dir
+    mkdir -p ./$dir
     cp -r oplsaaGO.ff ./$dir
     cp ./receive/${ion}_lay/GO_${spacing}.gro ./$dir/GO2-ion.gro
     cp ./receive/${ion}_lay/GO_${spacing}.top ./$dir/GO2.top
