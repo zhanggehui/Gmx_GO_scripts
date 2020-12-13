@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J gmx_test
+#SBATCH -J gmx
 #SBATCH -p cn_nl
 #SBATCH -N 1
 #SBATCH -o ./test/1.out

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH -J gmx_nvtequ_0613-20:22
+#SBATCH -J gmx
 #SBATCH -p cn-short
 #SBATCH -N 1
 #SBATCH -o ./nvtequ/1.out
@@ -36,16 +36,6 @@ echo '' >> ./$rundir/time.out
 
 #############################################################
 
-if [ $SLURM_JOB_NUM_NODES -eq 1 -a $Usempirun -eq 0 ] ; then
-    source /home/liufeng_pkuhpc/gmx-zs.sh
-    gmxrun="gmx mdrun -ntmpi $SLURM_NTASKS"
-else
-    source /appsnew/mdapps/gromacs2019.3_cpu_intelmkl2019_cnscompat/bin/GMXRC2.bash
-    #mpistring="mpirun -n $SLURM_NTASKS -quiet --mca pml ob1 --mca btl_openib_allow_ib true"
-    mpistring="mpirun -n $SLURM_NTASKS"
-    gmxrun="$mpistring mdrun_mpi"
-    #gmxrun="$mpistring mdrun_mpi2"
-fi
 
 source ./$rundir/$runscript
 
