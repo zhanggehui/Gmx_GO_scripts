@@ -1,4 +1,3 @@
-; minim.mdp - used as input into grompp to generate em.tpr
 ; Parameters describing what to do, when to stop and what to save
 integrator  = steep         ;cg   ;steep  
 emtol       = 1000.0        ; Stop minimization when the maximum force < 1000.0 kJ/mol/nm

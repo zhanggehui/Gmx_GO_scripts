@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for ((i=0;i<50;i++))
+for ((i=0;i<20;i++))
 do
 gmx grompp -f ./scripts/em.mdp  -c GO2-ion.gro -p GO2.top \
 -o ./$rundir/em.tpr -po ./$rundir/em-out -n waterlayer.ndx

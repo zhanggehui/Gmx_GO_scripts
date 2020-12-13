@@ -27,6 +27,3 @@ new="electric-field-y         = -1.${i} 0 0 0"
 sed -i "/$word/c$new" ./scripts/nvt-cycle.mdp
 source ./scripts/auto-run.sh cycle-run.sh ${pressure}Mpa-1.${i}V
 done
-
-
-
