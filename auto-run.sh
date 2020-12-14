@@ -3,7 +3,7 @@
 NodeType=cn_nl # cn-short ; cn_nl ; cn-long
 NtasksPerNode=28
 NodeNum=1
-export Usempirun=1  #cn-short,cn-long: 0 or 1 ; cn_nl: 1(better)
+export Usempirun=1  # mdrun or mdrun_mpi
 export runscript=$1
 export rundir=$2
 export orientation=2  #ori x1,y2,z3
