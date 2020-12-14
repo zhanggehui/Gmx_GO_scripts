@@ -1,11 +1,16 @@
 scriptsdir='scripts'
 subpressure=1 #1代表压强任务，0代表电压任务
+pvmix=0 #压强,电场共同作用，此时电场反向
 
-if [ subpressure -ne 0 ]; then
-    #shut off electric-field-y
-    word='electric-field-y' ; new=';electric-field-y         = 0 0 0 0'
-    sed -i "/$word/c$new" ./$scriptsdir/nvt-cycle.mdp
+#恢复仓库的初始状态：电场为零，压强为零
+#shut off pressure
+word="pressure=" ; new="pressure=0     #Mpa"
+sed -i "/$word/c$new" ./$scriptsdir/cycle-run.sh
+#shut off electric-field-y
+word='electric-field-y' ; new=';electric-field-y         = 0 0 0 0'
+sed -i "/$word/c$new" ./$scriptsdir/nvt-cycle.mdp
 
+if [ $subpressure -ne 0 ]; then
     word='pressure='
     for ((i=0;i<20;i++)); do
         export i 
@@ -15,21 +20,15 @@ if [ subpressure -ne 0 ]; then
         source ./$scriptsdir/auto-run.sh cycle-run.sh ${pressure}Mpa-0V
     done
 else
-    #shut off pressure
-    word="pressure=" ; new="pressure=0     #Mpa"
-    sed -i "/$word/c$new" ./scripts/cycle-run.sh
-
-    #需要增加一个机制：启用一种前，先关闭另外一种
-    word="electric-field-y"    #2019版
-    #word="E-y                      ="       #507老版
-
-    #0.x V
+    word="electric-field-y"
     for ((i=1;i<17;i++)); do
         export i 
-        e_amplitude=`awk 'BEGIN{ i=ENVIRON["i"]; printf("%s",0.1*i); }'`
+        if [ $pvmix -ne 0 ]; then
+            e_amplitude=`awk 'BEGIN{ i=ENVIRON["i"]; printf("%s",-0.1*i); }'`
+        else
+            e_amplitude=`awk 'BEGIN{ i=ENVIRON["i"]; printf("%s",0.1*i); }'`
+        fi
         new="electric-field-y         = ${e_amplitude} 0 0 0"     #2019版
-        #new="E-y                      =  1  ${e_amplitude}  0"         #2019版
-        
         sed -i "/$word/c$new" ./scripts/nvt-cycle.mdp
         source ./scripts/auto-run.sh cycle-run.sh 0Mpa-${e_amplitude}V
     done
